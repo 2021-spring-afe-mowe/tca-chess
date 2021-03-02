@@ -1,3 +1,35 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<ion-list>
+  <ion-list-header>
+    <ion-label id="homePageTitle">
+      My Chess Stats
+    </ion-label>
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>My Opponent:</ion-label>
+    <ion-input placeholder="Enter opponent's name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Playing as...</ion-label>
+    <ion-select placeholder="White">
+      <ion-select-option value="w">White</ion-select-option>
+      <ion-select-option value="b">Black</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Time Control</ion-label>
+    <ion-select value="classical" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="classical">Classical</ion-select-option>
+      <ion-select-option value="blitz">Blitz</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+</ion-list>
+
+
+<ion-button href="#"
+  color="success" id="startGame" size="default">
+  Start Game
+</ion-button>
