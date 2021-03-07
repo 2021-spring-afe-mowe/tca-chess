@@ -1,44 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      My Chess Stats
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
-
-<!-- Default Checkbox -->
-<ion-checkbox></ion-checkbox>
-
-<!-- Disabled Checkbox -->
-<ion-checkbox disabled="true"></ion-checkbox>
-
-<!-- Checked Checkbox -->
-<ion-checkbox checked="true"></ion-checkbox>
-
-<!-- Checkbox Colors -->
-<ion-checkbox color="primary"></ion-checkbox>
-<ion-checkbox color="secondary"></ion-checkbox>
-<ion-checkbox color="danger"></ion-checkbox>
-<ion-checkbox color="light"></ion-checkbox>
-<ion-checkbox color="dark"></ion-checkbox>
-
-<!-- Checkboxes in a List -->
 <ion-list>
-  <ion-item *ngFor="let entry of form">
-    <ion-label>{{entry.val}}</ion-label>
-    <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  <ion-list-header>
+    <ion-label id="homePageTitle">
+      My Chess Stats
+    </ion-label>
+  </ion-list-header>
+
+  <img
+    src="assets/chesspieces.jpg"
+    alt="Black and white kings"
+    id="chessPieces"/>
+
+  <ion-item>
+    <ion-label>My Opponent:</ion-label>
+    <ion-input placeholder="Enter opponent's name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Playing as...</ion-label>
+    <ion-select placeholder="White">
+      <ion-select-option value="w">White</ion-select-option>
+      <ion-select-option value="b">Black</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Time Control</ion-label>
+    <ion-select value="classical" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="classical">Classical</ion-select-option>
+      <ion-select-option value="blitz">Blitz</ion-select-option>
+    </ion-select>
   </ion-item>
 </ion-list>
+
+<ion-button
+  routerLink="/current-game"
+  color="success"
+  class="appButton"
+  id="startGame"
+  size="default">
+  Start Game
+</ion-button>
+
+<ion-button
+  routerLink="/my-games"
+  color="primary"
+  class="appButton"
+  id="myGames"
+  size="default">
+  My Games
+</ion-button>
