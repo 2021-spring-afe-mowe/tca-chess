@@ -5,6 +5,11 @@
     </ion-label>
   </ion-list-header>
 
+  <img
+    src="assets/chesspieces.jpg"
+    alt="Black and white kings"
+    id="chessPieces"/>
+
   <ion-item>
     <ion-label>My Opponent:</ion-label>
     <ion-input placeholder="Enter opponent's name"></ion-input>
@@ -25,11 +30,22 @@
       <ion-select-option value="blitz">Blitz</ion-select-option>
     </ion-select>
   </ion-item>
-
 </ion-list>
 
-
-<ion-button href="#"
-  color="success" id="startGame" size="default">
+<ion-button
+  href="/current-game"
+  color="success"
+  class="appButton"
+  id="startGame"
+  size="default">
   Start Game
+</ion-button>
+
+<ion-button
+  href="/my-games"
+  color="primary"
+  class="appButton"
+  id="myGames"
+  size="default">
+  My Games
 </ion-button>

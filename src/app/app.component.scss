@@ -1,9 +1,19 @@
 #homePageTitle {
+  text-align: center;
   text-transform: capitalize;
   padding-bottom: 2em;
 }
 
-#startGame {
+.appButton {
   display: inline-block;
   margin-left: 1em;
+  margin-top: 1em;
+}
+
+#chessPieces {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding-bottom: 1em;
 }
