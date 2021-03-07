@@ -8,11 +8,6 @@ const routes: Routes = [
       .then( m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
     path: 'current-game',
     loadChildren: () => import('./current-game/current-game.module')
       .then( m => m.CurrentGamePageModule)
@@ -21,6 +16,11 @@ const routes: Routes = [
     path: 'my-games',
     loadChildren: () => import('./my-games/my-games.module')
       .then( m => m.MyGamesPageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
 ];
 

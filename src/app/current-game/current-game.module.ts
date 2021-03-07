@@ -17,4 +17,8 @@ import { CurrentGamePage } from './current-game.page';
   ],
   declarations: [CurrentGamePage]
 })
-export class CurrentGamePageModule {}
+export class CurrentGamePageModule {
+  ngOnInit() {
+    console.log("on current game")
+  }
+}
