@@ -13,7 +13,7 @@ import { CurrentGamePage } from './current-game.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    CurrentGamePageRoutingModule
+    CurrentGamePageRoutingModule,
   ],
   declarations: [CurrentGamePage]
 })

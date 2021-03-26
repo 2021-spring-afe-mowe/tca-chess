@@ -12,5 +12,4 @@ export class CurrentGamePage implements OnInit {
   ngOnInit() {
     console.log("current game here")
   }
-
 }
