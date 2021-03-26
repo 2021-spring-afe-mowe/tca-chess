@@ -14,10 +14,20 @@
 		</ion-row>
 		<ion-row>
 			<ion-col>
-				<ion-button expand="full" size="large">Start Timer</ion-button>
+				<ion-button
+					color="dark"
+					expand="full"
+					size="large">
+					Start Timer
+			</ion-button>
 			</ion-col>
 			<ion-col>
-				<ion-button expand="full" size="large">Stop Timer</ion-button>
+				<ion-button
+					color="dark"
+					expand="full"
+					size="large">
+					Stop Timer
+				</ion-button>
 			</ion-col>
 		</ion-row>
 	</ion-grid>
@@ -27,7 +37,9 @@
 
 		<ion-row>
 			<ion-col>
-				<span class="grid-text grid-label">Opponent</span>
+				<span class="grid-text grid-label">
+					Opponent
+				</span>
 			</ion-col>
 			<ion-col>
 				<span class="grid-text">
@@ -38,7 +50,9 @@
 
 		<ion-row>
 			<ion-col>
-				<span class="grid-text grid-label">Time Control</span>
+				<span class="grid-text grid-label">
+					Time Control
+				</span>
 			</ion-col>
 			<ion-col>
 				<span class="grid-text">
@@ -49,7 +63,10 @@
 
 		<ion-row>
 			<ion-col>
-				<span class="grid-text grid-label">Color</span>
+				<span
+					class="grid-text grid-label">
+					Color
+				</span>
 			</ion-col>
 			<ion-col>
 				<span class="grid-text">
@@ -59,12 +76,18 @@
 		</ion-row>
 	</ion-grid>
 
+	<ion-header>
+		<ion-toolbar>
+			<ion-title>Game Result</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
 	<ion-grid>
 		<ion-row>
 			<ion-col>
 				<ion-button
 					color="success"
-					expand="full"
+					expand="block"
 					size="large">
 					Win
 				</ion-button>
@@ -72,7 +95,7 @@
 			<ion-col>
 				<ion-button
 					color="danger"
-					expand="full"
+					expand="block"
 					size="large">
 					Lose
 				</ion-button>
@@ -80,7 +103,7 @@
 			<ion-col>
 				<ion-button
 					color="primary"
-					expand="full"
+					expand="block"
 					size="large">
 					Draw
 				</ion-button>
@@ -89,11 +112,28 @@
 	</ion-grid>
 
 
-	<ion-button>
+	<ion-button
+		color="dark"
+		class="appButton"
+		id="saveGameStats"
+		size="default"
+		expand="block">
 		Save Game Stats
 	</ion-button>
 
-	<ion-back-button defaultHref="home" id="backButton">
+	<ion-button
+	  routerLink="/my-games"
+	  color="dark"
+	  class="appButton"
+	  id="myGames"
+	  size="default"
+		expand="block">
+	  My Games
+	</ion-button>
+
+	<ion-back-button
+		defaultHref="home"
+		id="backButton">
 		Go Back
 	</ion-back-button>
 
