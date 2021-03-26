@@ -30,7 +30,9 @@
 				<span class="grid-text grid-label">Opponent</span>
 			</ion-col>
 			<ion-col>
-				<span class="grid-text">opponent goes here</span>
+				<span class="grid-text">
+					{{ opponentName }}
+				</span>
 			</ion-col>
 		</ion-row>
 
@@ -39,7 +41,9 @@
 				<span class="grid-text grid-label">Time Control</span>
 			</ion-col>
 			<ion-col>
-				<span class="grid-text">time control</span>
+				<span class="grid-text">
+					{{ timeControl }}
+				</span>
 			</ion-col>
 		</ion-row>
 
@@ -48,7 +52,9 @@
 				<span class="grid-text grid-label">Color</span>
 			</ion-col>
 			<ion-col>
-				<span class="grid-text">black or white</span>
+				<span class="grid-text">
+					{{ color }}
+				</span>
 			</ion-col>
 		</ion-row>
 	</ion-grid>
@@ -82,6 +88,10 @@
 		</ion-row>
 	</ion-grid>
 
+
+	<ion-button>
+		Save Game Stats
+	</ion-button>
 
 	<ion-back-button defaultHref="home" id="backButton">
 		Go Back

@@ -12,28 +12,33 @@
 
   <ion-item>
     <ion-label>My Opponent:</ion-label>
-    <ion-input placeholder="Enter opponent's name"></ion-input>
+    <ion-input placeholder="Enter opponent's name"
+      [(ngModel)]="opponentName"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Playing as...</ion-label>
-    <ion-select placeholder="White">
-      <ion-select-option value="w">White</ion-select-option>
-      <ion-select-option value="b">Black</ion-select-option>
+    <ion-select placeholder="White"
+        [(ngModel)]="color">
+      <ion-select-option value="White">White</ion-select-option>
+      <ion-select-option value="Black">Black</ion-select-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label>Time Control</ion-label>
-    <ion-select value="classical" okText="Okay" cancelText="Dismiss">
-      <ion-select-option value="classical">Classical</ion-select-option>
-      <ion-select-option value="blitz">Blitz</ion-select-option>
+    <ion-select value="Classical"
+        okText="Okay"
+        cancelText="Dismiss"
+        [(ngModel)]="timeControl">
+      <ion-select-option value="Classical">Classical</ion-select-option>
+      <ion-select-option value="Blitz">Blitz</ion-select-option>
     </ion-select>
   </ion-item>
 </ion-list>
 
 <ion-button
-  routerLink="/current-game"
+  (click)="goToStartGame()"
   color="success"
   class="appButton"
   id="startGame"
