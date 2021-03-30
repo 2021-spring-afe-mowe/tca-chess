@@ -16,11 +16,19 @@ export class LocalStorageService {
     this._storage = storage;
   }
 
-  public set(key: string, value: any) {
-    this._storage?.set(key, value);
+  public async set(key: string, value: any) {
+    await this._storage?.set(key, value);
   }
 
-  public get(key: string) {
-    return this._storage?.get(key);
+  public async get(key: string) {
+    return await this._storage?.get(key);
+  }
+
+  public async getAllKeys() {
+    return await this._storage?.keys();
+  }
+
+  public async clearAll() {
+    await this._storage.clear();
   }
 }

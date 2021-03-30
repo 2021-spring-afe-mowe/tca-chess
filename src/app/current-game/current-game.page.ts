@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameDataService } from '../game-data.service';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../local-storage.service'
 
 @Component({
   selector: 'app-current-game',
@@ -13,7 +14,6 @@ export class CurrentGamePage implements OnInit {
   constructor(
     private gameDataService: GameDataService,
     private localStorageService: LocalStorageService) {
-
     }
 
   timeControl = "";
@@ -35,13 +35,14 @@ export class CurrentGamePage implements OnInit {
 
   saveGame() {
     let thisGame = {
+      dateCreated: new Date(),
       timeControl: this.timeControl,
       opponentName: this.opponentName,
       color: this.color,
       gameResult: this.gameResult
     }
 
-    this.localStorageService.set(new Date().getTime(), thisGame);
+    this.localStorageService.set(new Date().getTime().toString(), thisGame);
   }
 
   ngOnInit() {
