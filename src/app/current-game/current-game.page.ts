@@ -10,11 +10,39 @@ import { Router } from '@angular/router';
 
 export class CurrentGamePage implements OnInit {
 
-  constructor(private gameDataService: GameDataService) {}
+  constructor(
+    private gameDataService: GameDataService,
+    private localStorageService: LocalStorageService) {
+
+    }
 
   timeControl = "";
   opponentName = "";
   color = "";
+  gameResult = "";
+
+  setWin() {
+    this.gameResult = "Win"
+  }
+
+  setLose() {
+    this.gameResult = "Lose"
+  }
+
+  setDraw() {
+    this.gameResult = "Draw"
+  }
+
+  saveGame() {
+    let thisGame = {
+      timeControl: this.timeControl,
+      opponentName: this.opponentName,
+      color: this.color,
+      gameResult: this.gameResult
+    }
+
+    this.localStorageService.set(new Date().getTime(), thisGame);
+  }
 
   ngOnInit() {
     this.color = this.gameDataService.getColor();

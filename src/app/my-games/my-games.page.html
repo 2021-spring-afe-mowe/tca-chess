@@ -25,10 +25,20 @@
 
 </ion-list>
 
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-back-button defaultHref="home">
+        Go Back
+      </ion-back-button>
+    </ion-col>
+    <ion-col>
+      <ion-button (click)="clearGames()">
+        Clear Games
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
-  <ion-back-button
-    defaultHref="home">
-    Go Back
-  </ion-back-button>
 
 </ion-content>

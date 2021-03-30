@@ -12,7 +12,6 @@ export class HomePage {
   constructor(
     private gameDataService: GameDataService,
     private router: Router) {
-
   }
 
   timeControl = "Classical";

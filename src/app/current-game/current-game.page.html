@@ -8,34 +8,6 @@
 
 	<ion-grid>
 		<ion-row>
-			<div class="timer-value">
-				0:00
-			</div>
-		</ion-row>
-		<ion-row>
-			<ion-col>
-				<ion-button
-					color="dark"
-					expand="full"
-					size="large">
-					Start Timer
-			</ion-button>
-			</ion-col>
-			<ion-col>
-				<ion-button
-					color="dark"
-					expand="full"
-					size="large">
-					Stop Timer
-				</ion-button>
-			</ion-col>
-		</ion-row>
-	</ion-grid>
-
-
-	<ion-grid>
-
-		<ion-row>
 			<ion-col>
 				<span class="grid-text grid-label">
 					Opponent
@@ -78,7 +50,9 @@
 
 	<ion-header>
 		<ion-toolbar>
-			<ion-title>Game Result</ion-title>
+			<ion-title>
+				Game Result: {{ gameResult }}
+			</ion-title>
 		</ion-toolbar>
 	</ion-header>
 
@@ -86,6 +60,7 @@
 		<ion-row>
 			<ion-col>
 				<ion-button
+					(click)="setWin()"
 					color="success"
 					expand="block"
 					size="large">
@@ -94,6 +69,7 @@
 			</ion-col>
 			<ion-col>
 				<ion-button
+					(click)="setLose()"
 					color="danger"
 					expand="block"
 					size="large">
@@ -102,6 +78,7 @@
 			</ion-col>
 			<ion-col>
 				<ion-button
+				  (click)="setDraw()"
 					color="primary"
 					expand="block"
 					size="large">
@@ -113,12 +90,13 @@
 
 
 	<ion-button
+	  (click)="saveGame()"
 		color="dark"
 		class="appButton"
-		id="saveGameStats"
+		id="saveGame"
 		size="default"
 		expand="block">
-		Save Game Stats
+		Save This Game
 	</ion-button>
 
 	<ion-button
