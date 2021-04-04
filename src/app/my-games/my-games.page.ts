@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from '../local-storage.service';
 import { ToastController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-my-games',
   templateUrl: './my-games.page.html',

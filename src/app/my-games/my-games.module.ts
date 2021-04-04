@@ -1,3 +1,4 @@
+import { MbscModule } from '@mobiscroll/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +10,8 @@ import { MyGamesPageRoutingModule } from './my-games-routing.module';
 import { MyGamesPage } from './my-games.page';
 
 @NgModule({
-  imports: [
+  imports: [ 
+    MbscModule, 
     CommonModule,
     FormsModule,
     IonicModule,
