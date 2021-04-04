@@ -88,10 +88,17 @@
 		</ion-row>
 	</ion-grid>
 
+	<ion-header>
+		<ion-toolbar>
+			<ion-title>
+				Actions:
+			</ion-title>
+		</ion-toolbar>
+	</ion-header>
 
 	<ion-button
 	  (click)="saveGame()"
-		color="dark"
+		color="primary"
 		class="appButton"
 		id="saveGame"
 		size="default"
@@ -100,13 +107,23 @@
 	</ion-button>
 
 	<ion-button
+		routerLink="/home"
+		color="success"
+		class="appButton"
+		id="saveGame"
+		size="default"
+		expand="block">
+		Start New Game
+	</ion-button>
+
+	<ion-button
 	  routerLink="/my-games"
-	  color="dark"
+	  color="primary"
 	  class="appButton"
 	  id="myGames"
 	  size="default"
 		expand="block">
-	  My Games
+	  View Game Details
 	</ion-button>
 
 	<ion-back-button
