@@ -10,17 +10,23 @@
 
   <ion-item>
     <ion-label>Win</ion-label>
-    <ion-note slot="start" color="success">{{ gamesWon }}</ion-note>
+    <ion-note slot="start" color="success">
+      <h2>{{ gamesWon }}</h2>
+    </ion-note>
   </ion-item>
 
   <ion-item>
     <ion-label>Lose</ion-label>
-    <ion-note slot="start" color="danger">{{ gamesLost }}</ion-note>
+    <ion-note slot="start" color="danger">
+      <h2>{{ gamesLost }}</h2>
+    </ion-note>
   </ion-item>
 
   <ion-item>
     <ion-label>Draw</ion-label>
-    <ion-note slot="start" color="warning">{{ gamesDrawn }}</ion-note>
+    <ion-note slot="start" color="warning">
+      <h2>{{ gamesDrawn }}</h2>
+    </ion-note>
   </ion-item>
 
 </ion-list>
@@ -32,49 +38,68 @@
 </ion-header>
 
 <ion-grid>
-  <ion-item *ngFor="let game of myGames">
-
+  <ion-item>
     <ion-row>
-      <ion-col size="3">
-        Time Control: {{ game.timeControl }}
+      <ion-col class="ion-text-center">
+        Time
       </ion-col>
-
-      <ion-col size="3">
-        Opponent: {{ game.opponentName }}
+      <ion-col class="ion-text-center">
+        vs.
       </ion-col>
-
-      <ion-col size="3">
-        Color: {{ game.color }}
+      <ion-col class="ion-text-cenetr">
+        Color
       </ion-col>
-
-      <ion-col size="3">
-        Result: {{ game.gameResult }}
+      <ion-col class="ion-text-center">
+        Result
       </ion-col>
     </ion-row>
+  </ion-item>
 
+  <ion-item *ngFor="let game of myGames">
+    <ion-row>
+      <ion-col size="3">
+        {{ game.timeControl }}
+      </ion-col>
+      <ion-col size="3">
+        {{ game.opponentName }}
+      </ion-col>
+      <ion-col size="3">
+        {{ game.color }}
+      </ion-col>
+      <ion-col size="3">
+        {{ game.gameResult }}
+      </ion-col>
+    </ion-row>
   </ion-item>
 </ion-grid>
 
 <ion-grid>
   <ion-row>
     <ion-col>
-      <ion-back-button defaultHref="home">
-        Go Back
-      </ion-back-button>
-    </ion-col>
-
-    <ion-col>
-      <ion-button (click)="clearGames()">
+      <ion-button
+      (click)="clearGames()"
+      expand="full"
+      >
         Clear Games
       </ion-button>
     </ion-col>
 
     <ion-col>
-      <ion-button routerLink="/home">
+      <ion-button
+      routerLink="/home"
+      expand="full"
+      >
         Start New Game
       </ion-button>
     </ion-col>
+  </ion-row>
 
+  <ion-row>
+    <ion-col>
+      <ion-back-button defaultHref="home">
+        Go Back
+      </ion-back-button>
+    </ion-col>
   </ion-row>
 </ion-grid>
 

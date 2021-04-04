@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from '../local-storage.service';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -14,12 +15,21 @@ export class MyGamesPage implements OnInit {
   gamesLost: number = 0;
   gamesDrawn: number = 0;
 
-  constructor(private localStorageService: LocalStorageService) {
+  constructor(private localStorageService: LocalStorageService, public toastController: ToastController) {
   }
 
   async clearGames() {
     await this.localStorageService.clearAll();
+    await this.presentToast();
     await this.getAllGames();
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Your games have been cleared.',
+      duration: 2000
+    });
+    toast.present();
   }
 
   async getAllGames() {

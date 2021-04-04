@@ -37,20 +37,29 @@
   </ion-item>
 </ion-list>
 
-<ion-button
-  (click)="goToStartGame()"
-  color="success"
-  class="appButton"
-  id="startGame"
-  size="default">
-  Start Game
-</ion-button>
-
-<ion-button
-  routerLink="/my-games"
-  color="primary"
-  class="appButton"
-  id="myGames"
-  size="default">
-  View Game Details
-</ion-button>
+<ion-grid class="ion-no-margin">
+  <ion-row>
+    <ion-col size="6">
+      <ion-button
+        class="ion-no-margin"
+        (click)="goToStartGame()"
+        color="success"
+        expand="full"
+        id="startGame"
+        size="default">
+        New Game
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button
+        class="ion-no-margin"
+        routerLink="/my-games"
+        color="primary"
+        id="myGames"
+        expand="full"
+        size="default">
+        View Games
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

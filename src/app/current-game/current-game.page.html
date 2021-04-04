@@ -62,7 +62,7 @@
 				<ion-button
 					(click)="setWin()"
 					color="success"
-					expand="block"
+					expand="full"
 					size="large">
 					Win
 				</ion-button>
@@ -71,7 +71,7 @@
 				<ion-button
 					(click)="setLose()"
 					color="danger"
-					expand="block"
+					expand="full"
 					size="large">
 					Lose
 				</ion-button>
@@ -80,7 +80,7 @@
 				<ion-button
 				  (click)="setDraw()"
 					color="primary"
-					expand="block"
+					expand="full"
 					size="large">
 					Draw
 				</ion-button>
@@ -96,35 +96,47 @@
 		</ion-toolbar>
 	</ion-header>
 
-	<ion-button
-	  (click)="saveGame()"
-		color="primary"
-		class="appButton"
-		id="saveGame"
-		size="default"
-		expand="block">
-		Save This Game
-	</ion-button>
-
-	<ion-button
-		routerLink="/home"
-		color="success"
-		class="appButton"
-		id="saveGame"
-		size="default"
-		expand="block">
-		Start New Game
-	</ion-button>
-
-	<ion-button
-	  routerLink="/my-games"
-	  color="primary"
-	  class="appButton"
-	  id="myGames"
-	  size="default"
-		expand="block">
-	  View Game Details
-	</ion-button>
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<ion-button
+					(click)="saveGame()"
+					color="medium"
+					class="appButton"
+					id="saveGame"
+					size="default"
+					expand="full">
+					Save This Game
+				</ion-button>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-button
+					routerLink="/home"
+					color="medium"
+					class="appButton"
+					id="saveGame"
+					size="default"
+					expand="full">
+					Start New Game
+				</ion-button>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-button
+					routerLink="/my-games"
+					color="medium"
+					class="appButton"
+					id="myGames"
+					size="default"
+					expand="full">
+					View Games
+				</ion-button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 
 	<ion-back-button
 		defaultHref="home"
