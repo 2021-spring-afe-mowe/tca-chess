@@ -8,30 +8,47 @@
 
   <mbsc-form>
   <mbsc-form-group collapsible>
+
       <mbsc-form-group-title>
         <ion-label>Wins</ion-label>
         <ion-note slot="start" color="success">
           <h2>{{ gamesWon.length }}</h2>
         </ion-note>
       </mbsc-form-group-title>
+
           <mbsc-form-group-content>
-            <ion-item *ngFor="let game of gamesWon">
-              <ion-row>
-                <ion-col size="3">
+            <ion-row>
+              <ion-col>
+                <b>Time control</b>
+              </ion-col>
+              <ion-col>
+                <b>Opponent</b>
+              </ion-col>
+              <ion-col>
+                <b>Color</b>
+              </ion-col>
+              <ion-col>
+                <b>Result</b>
+              </ion-col>
+            </ion-row>
+
+              <ion-row *ngFor="let game of gamesWon">
+                <ion-col>
                   {{ game.timeControl }}
                 </ion-col>
-                <ion-col size="3">
+                <ion-col>
                   {{ game.opponentName }}
                 </ion-col>
-                <ion-col size="3">
+                <ion-col>
                   {{ game.color }}
                 </ion-col>
-                <ion-col size="3">
+                <ion-col>
                   {{ game.gameResult }}
                 </ion-col>
               </ion-row>
-            </ion-item>
+
           </mbsc-form-group-content>
+
       </mbsc-form-group>
 
   <mbsc-form-group collapsible>
@@ -42,23 +59,38 @@
         </ion-note>
       </mbsc-form-group-title>
           <mbsc-form-group-content>
-            <ion-item *ngFor="let game of gamesLost">
-              <ion-row>
-                <ion-col size="3">
+            <ion-row>
+              <ion-col>
+                Time control
+              </ion-col>
+              <ion-col>
+                Opponent
+              </ion-col>
+              <ion-col>
+                Color
+              </ion-col>
+              <ion-col>
+                Result
+              </ion-col>
+            </ion-row>
+
+              <ion-row *ngFor="let game of gamesLost">
+                <ion-col>
                   {{ game.timeControl }}
                 </ion-col>
-                <ion-col size="3">
+                <ion-col>
                   {{ game.opponentName }}
                 </ion-col>
-                <ion-col size="3">
+                <ion-col>
                   {{ game.color }}
                 </ion-col>
-                <ion-col size="3">
+                <ion-col>
                   {{ game.gameResult }}
                 </ion-col>
               </ion-row>
-            </ion-item>
+
           </mbsc-form-group-content>
+
       </mbsc-form-group>
 
 <mbsc-form-group collapsible>
@@ -69,22 +101,36 @@
       </ion-note>
     </mbsc-form-group-title>
         <mbsc-form-group-content>
-          <ion-item *ngFor="let game of gamesDrawn">
-            <ion-row>
-              <ion-col size="3">
+          <ion-row>
+            <ion-col>
+              Time control
+            </ion-col>
+            <ion-col>
+              Opponent
+            </ion-col>
+            <ion-col>
+              Color
+            </ion-col>
+            <ion-col>
+              Result
+            </ion-col>
+          </ion-row>
+
+            <ion-row *ngFor="let game of gamesDrawn">
+              <ion-col>
                 {{ game.timeControl }}
               </ion-col>
-              <ion-col size="3">
+              <ion-col>
                 {{ game.opponentName }}
               </ion-col>
-              <ion-col size="3">
+              <ion-col>
                 {{ game.color }}
               </ion-col>
-              <ion-col size="3">
+              <ion-col>
                 {{ game.gameResult }}
               </ion-col>
             </ion-row>
-          </ion-item>
+
         </mbsc-form-group-content>
     </mbsc-form-group>
 </mbsc-form>
