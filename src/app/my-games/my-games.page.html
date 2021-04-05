@@ -6,74 +6,88 @@
 
 <ion-content>
 
-<ion-list>
+  <mbsc-form>
+  <mbsc-form-group collapsible>
+      <mbsc-form-group-title>
+        <ion-label>Wins</ion-label>
+        <ion-note slot="start" color="success">
+          <h2>{{ gamesWon.length }}</h2>
+        </ion-note>
+      </mbsc-form-group-title>
+          <mbsc-form-group-content>
+            <ion-item *ngFor="let game of gamesWon">
+              <ion-row>
+                <ion-col size="3">
+                  {{ game.timeControl }}
+                </ion-col>
+                <ion-col size="3">
+                  {{ game.opponentName }}
+                </ion-col>
+                <ion-col size="3">
+                  {{ game.color }}
+                </ion-col>
+                <ion-col size="3">
+                  {{ game.gameResult }}
+                </ion-col>
+              </ion-row>
+            </ion-item>
+          </mbsc-form-group-content>
+      </mbsc-form-group>
 
-  <ion-item>
-    <ion-label>Win</ion-label>
-    <ion-note slot="start" color="success">
-      <h2>{{ gamesWon }}</h2>
-    </ion-note>
-  </ion-item>
+  <mbsc-form-group collapsible>
+      <mbsc-form-group-title>
+        <ion-label>Losses</ion-label>
+        <ion-note slot="start" color="danger">
+          <h2>{{ gamesLost.length }}</h2>
+        </ion-note>
+      </mbsc-form-group-title>
+          <mbsc-form-group-content>
+            <ion-item *ngFor="let game of gamesLost">
+              <ion-row>
+                <ion-col size="3">
+                  {{ game.timeControl }}
+                </ion-col>
+                <ion-col size="3">
+                  {{ game.opponentName }}
+                </ion-col>
+                <ion-col size="3">
+                  {{ game.color }}
+                </ion-col>
+                <ion-col size="3">
+                  {{ game.gameResult }}
+                </ion-col>
+              </ion-row>
+            </ion-item>
+          </mbsc-form-group-content>
+      </mbsc-form-group>
 
-  <ion-item>
-    <ion-label>Lose</ion-label>
-    <ion-note slot="start" color="danger">
-      <h2>{{ gamesLost }}</h2>
-    </ion-note>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Draw</ion-label>
-    <ion-note slot="start" color="warning">
-      <h2>{{ gamesDrawn }}</h2>
-    </ion-note>
-  </ion-item>
-
-</ion-list>
-
-
-
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Games Detail</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-grid>
-  <ion-item>
-    <ion-row>
-      <ion-col class="ion-text-center">
-        Time
-      </ion-col>
-      <ion-col class="ion-text-center">
-        vs.
-      </ion-col>
-      <ion-col class="ion-text-cenetr">
-        Color
-      </ion-col>
-      <ion-col class="ion-text-center">
-        Result
-      </ion-col>
-    </ion-row>
-  </ion-item>
-
-  <ion-item *ngFor="let game of myGames">
-    <ion-row>
-      <ion-col size="3">
-        {{ game.timeControl }}
-      </ion-col>
-      <ion-col size="3">
-        {{ game.opponentName }}
-      </ion-col>
-      <ion-col size="3">
-        {{ game.color }}
-      </ion-col>
-      <ion-col size="3">
-        {{ game.gameResult }}
-      </ion-col>
-    </ion-row>
-  </ion-item>
-</ion-grid>
+<mbsc-form-group collapsible>
+    <mbsc-form-group-title>
+      <ion-label>Draws</ion-label>
+      <ion-note slot="start" color="warning">
+        <h2>{{ gamesDrawn.length }}</h2>
+      </ion-note>
+    </mbsc-form-group-title>
+        <mbsc-form-group-content>
+          <ion-item *ngFor="let game of gamesDrawn">
+            <ion-row>
+              <ion-col size="3">
+                {{ game.timeControl }}
+              </ion-col>
+              <ion-col size="3">
+                {{ game.opponentName }}
+              </ion-col>
+              <ion-col size="3">
+                {{ game.color }}
+              </ion-col>
+              <ion-col size="3">
+                {{ game.gameResult }}
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </mbsc-form-group-content>
+    </mbsc-form-group>
+</mbsc-form>
 
 <ion-grid>
   <ion-row>

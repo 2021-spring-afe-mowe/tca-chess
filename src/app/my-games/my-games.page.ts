@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from '../local-storage.service';
 import { ToastController } from '@ionic/angular';
+import { MbscModule } from '@mobiscroll/angular';
 
 @Component({
   selector: 'app-my-games',
@@ -10,9 +11,9 @@ import { ToastController } from '@ionic/angular';
 export class MyGamesPage implements OnInit {
 
   myGames: any[] = [];
-  gamesWon: number = 0;
-  gamesLost: number = 0;
-  gamesDrawn: number = 0;
+  gamesWon: any[] = [];
+  gamesLost: any[] = [];
+  gamesDrawn: any[] = [];
 
   constructor(private localStorageService: LocalStorageService, public toastController: ToastController) {
   }
@@ -42,9 +43,9 @@ export class MyGamesPage implements OnInit {
       });
       let result = await Promise.all(games);
       this.myGames = result;
-      this.gamesWon = result.filter(game => game.gameResult === "Win").length;
-      this.gamesLost = result.filter(game => game.gameResult === "Lose").length;
-      this.gamesDrawn = result.filter(game => game.gameResult === "Draw").length;
+      this.gamesWon = result.filter(game => game.gameResult === "Win");
+      this.gamesLost = result.filter(game => game.gameResult === "Lose");
+      this.gamesDrawn = result.filter(game => game.gameResult === "Draw");
     }
   }
 

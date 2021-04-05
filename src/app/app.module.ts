@@ -14,10 +14,10 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [ 
+  imports: [
     MbscModule,  
-    FormsModule,  
-BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot({
+    FormsModule,
+    BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot({
      name: '__mydb',
      driverOrder: [Drivers.LocalStorage]
    })],
