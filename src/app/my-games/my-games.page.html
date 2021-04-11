@@ -6,6 +6,38 @@
 
 <ion-content>
 
+  <div>
+    <ion-list>
+      <ion-radio-group (ionChange)="updateColorFilter(chosenColor)" value="chosenColor" [(ngModel)]="chosenColor">
+        <ion-list-header>
+          Color: {{ chosenColor }}
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Any</ion-label>
+          <ion-radio value="Any"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Black</ion-label>
+          <ion-radio value="Black"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>White</ion-label>
+          <ion-radio value="White"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </div>
+
+  <div>
+    <p>{{ chosenTimeControl }}</p>
+    <input name="time-choice" type="radio"/> Classical
+    <input name="time-choice" type="radio"/> Blitz
+    <input name="time-choice" type="radio"/> Any
+  </div>
+
   <mbsc-form>
   <mbsc-form-group collapsible>
 
@@ -15,6 +47,7 @@
           <h2>{{ gamesWon.length }}</h2>
         </ion-note>
       </mbsc-form-group-title>
+
 
           <mbsc-form-group-content>
             <ion-row>

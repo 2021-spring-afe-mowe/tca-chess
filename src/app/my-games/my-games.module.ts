@@ -10,8 +10,8 @@ import { MyGamesPageRoutingModule } from './my-games-routing.module';
 import { MyGamesPage } from './my-games.page';
 
 @NgModule({
-  imports: [ 
-    MbscModule, 
+  imports: [
+    MbscModule,
     CommonModule,
     FormsModule,
     IonicModule,
@@ -19,4 +19,6 @@ import { MyGamesPage } from './my-games.page';
   ],
   declarations: [MyGamesPage]
 })
-export class MyGamesPageModule {}
+export class MyGamesPageModule {
+  
+}

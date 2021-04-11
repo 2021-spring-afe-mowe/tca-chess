@@ -14,6 +14,8 @@ export class MyGamesPage implements OnInit {
   gamesWon: any[] = [];
   gamesLost: any[] = [];
   gamesDrawn: any[] = [];
+  chosenColor: string = "Any";
+  chosenTimeControl: string = "Classical";
 
   constructor(private localStorageService: LocalStorageService, public toastController: ToastController) {
   }
@@ -22,6 +24,26 @@ export class MyGamesPage implements OnInit {
     await this.localStorageService.clearAll();
     await this.presentToast();
     await this.getAllGames();
+  }
+
+  async updateColorFilter(color: string) {
+    await this.getAllGames();
+
+    if (color === "Black") {
+      this.myGames = this.myGames.filter(game => game.color === "Black")
+    }
+
+    if (color === "White") {
+      this.myGames = this.myGames.filter(game => game.color === "White");
+    }
+
+    this.filterMyGamesByWinLoseDraw();
+  }
+
+  async filterMyGamesByWinLoseDraw() {
+    this.gamesWon = this.myGames.filter(game => game.gameResult === "Win");
+    this.gamesLost = this.myGames.filter(game => game.gameResult === "Lose");
+    this.gamesDrawn = this.myGames.filter(game => game.gameResult === "Draw");
   }
 
   async presentToast() {
@@ -43,9 +65,7 @@ export class MyGamesPage implements OnInit {
       });
       let result = await Promise.all(games);
       this.myGames = result;
-      this.gamesWon = result.filter(game => game.gameResult === "Win");
-      this.gamesLost = result.filter(game => game.gameResult === "Lose");
-      this.gamesDrawn = result.filter(game => game.gameResult === "Draw");
+      this.filterMyGamesByWinLoseDraw();
     }
   }
 
