@@ -8,7 +8,8 @@
 
   <div>
     <ion-list>
-      <ion-radio-group (ionChange)="updateColorFilter(chosenColor)" value="chosenColor" [(ngModel)]="chosenColor">
+      <ion-radio-group (ionChange)="updateColorFilter(chosenColor)"
+          value="chosenColor" [(ngModel)]="chosenColor">
         <ion-list-header>
           Color: {{ chosenColor }}
         </ion-list-header>
@@ -32,10 +33,29 @@
   </div>
 
   <div>
-    <p>{{ chosenTimeControl }}</p>
-    <input name="time-choice" type="radio"/> Classical
-    <input name="time-choice" type="radio"/> Blitz
-    <input name="time-choice" type="radio"/> Any
+    <ion-list>
+      <ion-radio-group (ionChange)="updateTimeControlFilter(chosenTimeControl)"
+          value="chosenTimeControl" [(ngModel)]="chosenTimeControl">
+        <ion-list-header>
+          Time Control: {{ chosenTimeControl }}
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Any</ion-label>
+          <ion-radio value="Any"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Classical</ion-label>
+          <ion-radio value="Classical"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Blitz</ion-label>
+          <ion-radio value="Blitz"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
   </div>
 
   <mbsc-form>

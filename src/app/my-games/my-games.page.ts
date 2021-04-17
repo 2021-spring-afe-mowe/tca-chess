@@ -15,7 +15,7 @@ export class MyGamesPage implements OnInit {
   gamesLost: any[] = [];
   gamesDrawn: any[] = [];
   chosenColor: string = "Any";
-  chosenTimeControl: string = "Classical";
+  chosenTimeControl: string = "";
 
   constructor(private localStorageService: LocalStorageService, public toastController: ToastController) {
   }
@@ -35,6 +35,20 @@ export class MyGamesPage implements OnInit {
 
     if (color === "White") {
       this.myGames = this.myGames.filter(game => game.color === "White");
+    }
+
+    this.filterMyGamesByWinLoseDraw();
+  }
+
+  async updateTimeControlFilter(timeControl: string) {
+    await this.getAllGames();
+
+    if (timeControl === "Classical") {
+      this.myGames = this.myGames.filter(game => game.timeControl === "Classical")
+    }
+
+    if (timeControl === "Blitz") {
+      this.myGames = this.myGames.filter(game => game.timeControl === "Blitz");
     }
 
     this.filterMyGamesByWinLoseDraw();
