@@ -57,7 +57,8 @@ export class MyGamesPage implements OnInit {
   async filterMyGamesByWinLoseDraw() {
     this.gamesWon = this.myGames.filter(game => game.gameResult === "Win");
     this.gamesLost = this.myGames.filter(game => game.gameResult === "Lose");
-    this.gamesDrawn = this.myGames.filter(game => game.gameResult === "Draw");
+    this.gamesDrawn = this.myGames
+      .filter(game => game.gameResult === "Draw").sort((a, b) => a.dateCreated - b.dateCreated);
   }
 
   async presentToast() {
@@ -70,21 +71,31 @@ export class MyGamesPage implements OnInit {
 
   async getAllGames() {
     let gameKeys = await this.localStorageService.getAllKeys();
-
     if (gameKeys) {
       let games = []
       gameKeys.map(async (gameKey) => {
         let game = this.localStorageService.get(gameKey);
         games.push(game);
       });
+
       let result = await Promise.all(games);
+      result = result.sort((a, b) => {
+        if (a.dateCreated > b.dateCreated) {
+          return -1
+        }
+        if (a.dateCreated < b.dateCreated) {
+          return 1
+        }
+        return 0
+      });
+
       this.myGames = result;
       this.filterMyGamesByWinLoseDraw();
     }
   }
 
-  ngOnInit() {
-    this.getAllGames();
+  async ngOnInit() {
+    await this.getAllGames();
   }
 
 }

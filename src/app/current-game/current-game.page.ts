@@ -3,11 +3,13 @@ import { GameDataService } from '../game-data.service';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../local-storage.service'
 import { ToastController } from '@ionic/angular';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-current-game',
   templateUrl: './current-game.page.html',
   styleUrls: ['./current-game.page.scss'],
+  providers: [DatePipe]
 })
 
 export class CurrentGamePage implements OnInit {
@@ -15,6 +17,7 @@ export class CurrentGamePage implements OnInit {
   constructor(
     private gameDataService: GameDataService,
     private localStorageService: LocalStorageService,
+    private datePipe: DatePipe,
     public toastController: ToastController) { }
 
   timeControl = "";
