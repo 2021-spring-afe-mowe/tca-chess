@@ -88,6 +88,20 @@
 		</ion-row>
 	</ion-grid>
 
+	<ion-row>
+		<ion-col>
+			<ion-button
+				(click)="saveGame()"
+				color="dark"
+				class="appButton"
+				id="saveGame"
+				size="default"
+				expand="full">
+				Save Game
+			</ion-button>
+		</ion-col>
+	</ion-row>
+
 	<ion-header>
 		<ion-toolbar>
 			<ion-title>
@@ -100,34 +114,22 @@
 		<ion-row>
 			<ion-col>
 				<ion-button
-					(click)="saveGame()"
-					color="medium"
-					class="appButton"
-					id="saveGame"
-					size="default"
-					expand="full">
-					Save This Game
-				</ion-button>
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col>
-				<ion-button
 					routerLink="/home"
-					color="medium"
+					color="dark"
 					class="appButton"
-					id="saveGame"
+					id="newGame"
 					size="default"
 					expand="full">
 					New Game
 				</ion-button>
 			</ion-col>
 		</ion-row>
+
 		<ion-row>
 			<ion-col>
 				<ion-button
 					routerLink="/my-games"
-					color="medium"
+					color="dark"
 					class="appButton"
 					id="myGames"
 					size="default"
@@ -139,9 +141,9 @@
 	</ion-grid>
 
 	<ion-back-button
-		defaultHref="home"
-		id="backButton">
-		Go Back
+			defaultHref="home"
+			id="backButton">
+				Back
 	</ion-back-button>
 
 </ion-content>
