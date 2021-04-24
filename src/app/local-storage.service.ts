@@ -31,4 +31,8 @@ export class LocalStorageService {
   public async clearAll() {
     await this._storage.clear();
   }
+
+  public async clearByKey(key) {
+    await this._storage.remove(key)
+  }
 }

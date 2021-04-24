@@ -25,16 +25,19 @@ export class CurrentGamePage implements OnInit {
   color = "";
   gameResult = "";
 
-  setWin() {
+  async setWin() {
     this.gameResult = "Win"
+    await this.saveGame();
   }
 
-  setLose() {
+  async setLose() {
     this.gameResult = "Lose"
+    await this.saveGame();
   }
 
-  setDraw() {
+  async setDraw() {
     this.gameResult = "Draw"
+    await this.saveGame();
   }
 
   async saveGame() {

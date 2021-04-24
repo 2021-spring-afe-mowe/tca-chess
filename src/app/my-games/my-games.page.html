@@ -86,6 +86,8 @@
               <ion-col>
                 <b>Date</b>
               </ion-col>
+              <ion-col>
+              </ion-col>
             </ion-row>
 
               <ion-row *ngFor="let game of gamesWon">
@@ -103,6 +105,12 @@
                 </ion-col>
                 <ion-col>
                   {{ game.dateCreated | date:'shortDate' }}
+                </ion-col>
+                <ion-col>
+                  <ion-icon
+                    name="trash"
+                    (click)="deleteGame(game)">
+                  </ion-icon>
                 </ion-col>
               </ion-row>
 
@@ -134,25 +142,33 @@
               <ion-col>
                 <b>Date</b>
               </ion-col>
+              <ion-col>
+              </ion-col>
             </ion-row>
 
-              <ion-row *ngFor="let game of gamesLost">
-                <ion-col>
-                  {{ game.timeControl }}
-                </ion-col>
-                <ion-col>
-                  {{ game.opponentName }}
-                </ion-col>
-                <ion-col>
-                  {{ game.color }}
-                </ion-col>
-                <ion-col>
-                  {{ game.gameResult }}
-                </ion-col>
-                <ion-col>
-                  {{ game.dateCreated | date:'shortDate' }}
-                </ion-col>
-              </ion-row>
+            <ion-row *ngFor="let game of gamesLost">
+              <ion-col>
+                {{ game.timeControl }}
+              </ion-col>
+              <ion-col>
+                {{ game.opponentName }}
+              </ion-col>
+              <ion-col>
+                {{ game.color }}
+              </ion-col>
+              <ion-col>
+                {{ game.gameResult }}
+              </ion-col>
+              <ion-col>
+                {{ game.dateCreated | date:'shortDate' }}
+              </ion-col>
+              <ion-col>
+                <ion-icon
+                  name="trash"
+                  (click)="deleteGame(game)">
+                </ion-icon>
+              </ion-col>
+            </ion-row>
 
           </mbsc-form-group-content>
 
@@ -182,6 +198,8 @@
             <ion-col>
               <b>Date</b>
             </ion-col>
+            <ion-col>
+            </ion-col>
           </ion-row>
 
             <ion-row *ngFor="let game of gamesDrawn">
@@ -199,6 +217,12 @@
               </ion-col>
               <ion-col>
                 {{ game.dateCreated | date:'shortDate' }}
+              </ion-col>
+              <ion-col>
+                <ion-icon
+                  name="trash"
+                  (click)="deleteGame(game)">
+                </ion-icon>
               </ion-col>
             </ion-row>
 

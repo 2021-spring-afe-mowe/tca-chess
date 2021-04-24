@@ -69,6 +69,15 @@ export class MyGamesPage implements OnInit {
     toast.present();
   }
 
+  async presentGameDeletedToast(game) {
+    let message = 'Your game against ' + game.opponentName + ' has been deleted';
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000
+    });
+    toast.present();
+  }
+
   async getAllGames() {
     let gameKeys = await this.localStorageService.getAllKeys();
     if (gameKeys) {
@@ -94,8 +103,17 @@ export class MyGamesPage implements OnInit {
     }
   }
 
-  async ngOnInit() {
+  async deleteGame(game) {
+    let gameKey = new Date(game.dateCreated).getTime();
+    await this.localStorageService.clearByKey(gameKey);
+    await this.presentGameDeletedToast(game);
     await this.getAllGames();
   }
 
+  async ionViewDidEnter() {
+    await this.getAllGames();
+  }
+
+  async ngOnInit() {
+  }
 }
