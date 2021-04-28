@@ -20,12 +20,6 @@ export class MyGamesPage implements OnInit {
   constructor(private localStorageService: LocalStorageService, public toastController: ToastController) {
   }
 
-  async clearGames() {
-    await this.localStorageService.clearAll();
-    await this.presentToast();
-    await this.getAllGames();
-  }
-
   async updateColorFilter(color: string) {
     await this.getAllGames();
 
@@ -59,14 +53,6 @@ export class MyGamesPage implements OnInit {
     this.gamesLost = this.myGames.filter(game => game.gameResult === "Lose");
     this.gamesDrawn = this.myGames
       .filter(game => game.gameResult === "Draw").sort((a, b) => a.dateCreated - b.dateCreated);
-  }
-
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message: 'Your games have been cleared.',
-      duration: 2000
-    });
-    toast.present();
   }
 
   async presentGameDeletedToast(game) {
