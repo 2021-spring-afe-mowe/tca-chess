@@ -8,7 +8,7 @@
 
   <div>
     <ion-list>
-      <ion-radio-group (ionChange)="updateColorFilter(chosenColor)"
+      <ion-radio-group (ionChange)="updateFilters()"
           value="chosenColor" [(ngModel)]="chosenColor">
         <ion-list-header>
           Color: {{ chosenColor }}
@@ -34,7 +34,7 @@
 
   <div>
     <ion-list>
-      <ion-radio-group (ionChange)="updateTimeControlFilter(chosenTimeControl)"
+      <ion-radio-group (ionChange)="updateFilters()"
           value="chosenTimeControl" [(ngModel)]="chosenTimeControl">
         <ion-list-header>
           Time Control: {{ chosenTimeControl }}
